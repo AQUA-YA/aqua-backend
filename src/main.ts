@@ -28,8 +28,8 @@ async function bootstrap() {
 
   const port = process.env.PORT || 3000;
   console.log(`Starting server on port ${port}...`);
-  await app.listen(port);
-  console.log(`Server running on http://localhost:${port}`);
-  console.log(`Swagger docs at http://localhost:${port}/api/docs`);
+  await app.listen(port, '0.0.0.0');
+  console.log(`Server running on http://0.0.0.0:${port}`);
+  console.log(`Swagger docs at http://0.0.0.0:${port}/api/docs`);
 }
 bootstrap().catch((err) => console.error(err));
